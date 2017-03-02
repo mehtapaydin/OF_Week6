@@ -237,10 +237,16 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    Agents[curAgent].start(x, y);
-    curAgent++;
-    if (curAgent >= MAX_AGENTS) {  // make sure it does not go over
-      curAgent = 0;
+//    Agents[curAgent].start(x, y);
+//    curAgent++;
+//    if (curAgent >= MAX_AGENTS) {  // make sure it does not go over
+//      curAgent = 0;
+//    }
+    
+    //    Agents[curAgent].start(0, 0);
+    
+    for (int i=0; i < MAX_AGENTS; i++) {
+        Agents[i].start(ofRandom(1, ofGetWidth()),ofRandom(1, ofGetHeight()));
     }
     
  
